@@ -38,13 +38,14 @@ app.use(session({
     saveUninitialized: true,
     store: store,
     cookie: {
+        httpOnly: true,
         secure: 'auto',
     }
 }))
 
 app.use(cors({
     credentials: true,
-    origin: 'http://localhost:3000'
+    origin: true
 }));
 
 app.use(express.json());
